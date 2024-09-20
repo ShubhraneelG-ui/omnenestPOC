@@ -1,3 +1,3 @@
-const AboutUs = () => (<>Hello About Us page</>)
+const AboutUs = () => (<>About Us</>)
 
 export default AboutUs;
