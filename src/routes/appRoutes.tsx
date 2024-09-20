@@ -6,7 +6,7 @@ const appRoutes = createBrowserRouter([
   {
     path: '/',
     element: <AboutUs />,
-  }
+  },
 ]);
 
 export default appRoutes;
