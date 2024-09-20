@@ -1,0 +1,22 @@
+@import '/src/styles/constants';
+@import '/src/styles/mixins';
+@import '/src/styles/typography';
+
+.root {
+  @include toasterAppearance($warning-bg-color, $warning-color, $warning-color);
+  display: flex;
+  padding: toRem(12) toRem(16);
+
+  .message {
+    @include flexStyling(row, null, center);
+    margin: 0 auto 0 toRem(8);
+    padding-right: toRem(16);
+    flex: 1;
+  }
+
+  .icon {
+    cursor: pointer;
+    width: toRem(20);
+    height: toRem(20);
+  }
+}

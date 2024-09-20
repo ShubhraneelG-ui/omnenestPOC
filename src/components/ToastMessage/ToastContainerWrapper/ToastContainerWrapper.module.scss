@@ -1,0 +1,23 @@
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+@import 'src/styles/typography';
+
+.toast {
+  --toastify-toast-width: auto;
+  min-width: toRem(250);
+  padding: 0;
+  min-height: auto;
+  box-shadow: none;
+  border-radius: toRem(4);
+
+  div[class^='Toastify__toast'] {
+    padding: 0;
+    border-radius: toRem(4);
+    box-shadow: none;
+    min-height: auto;
+  }
+
+  .toastBody {
+    padding: 0;
+  }
+}
