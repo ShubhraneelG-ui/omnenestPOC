@@ -19,7 +19,7 @@ const SuccessToasterTemplate = () => (
   <>
     <ToastContainerWrapper />
     <Button
-      variant="Primary"
+      variant="contained"
       disabled={false}
       onClick={() => toastSuccess('Success')}
     >
@@ -34,7 +34,7 @@ const ErrorToasterTemplate = () => (
   <>
     <ToastContainerWrapper />
     <Button
-      variant="Primary"
+      variant="contained"
       disabled={false}
       onClick={() => toastError('Error')}
     >
@@ -49,7 +49,7 @@ const WarningToasterTemplate = () => (
   <>
     <ToastContainerWrapper />
     <Button
-      variant="Primary"
+      variant="contained"
       disabled={false}
       onClick={() => toastWarning('Warning!')}
     >
@@ -64,7 +64,7 @@ const InfoToasterTemplate = () => (
   <>
     <ToastContainerWrapper />
     <Button
-      variant="Primary"
+      variant="contained"
       disabled={false}
       onClick={() => toastInfo('Info')}
     >

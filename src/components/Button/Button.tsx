@@ -1,26 +1,8 @@
 import React from 'react';
-import { IButton } from './IButton';
-import style from './Button.module.scss';
+import { Button as MuiButton, ButtonProps } from '@mui/material';
 
-const Button: React.FC<IButton> = ({
-  variant = 'Primary',
-  size = 'Medium',
-  className = '',
-  disabled = false,
-  ...props
-}) => {
-  return (
-    <button
-      disabled={disabled}
-      className={[
-        style.button,
-        style[variant.toLocaleLowerCase()],
-        style[size.toLocaleLowerCase()],
-        className,
-      ].join(' ')}
-      {...props}
-    />
-  );
+const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
+  return <MuiButton {...props}>{children}</MuiButton>;
 };
 
 export default Button;
