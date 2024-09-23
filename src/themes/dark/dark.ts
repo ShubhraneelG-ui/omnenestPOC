@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material';
 
 export const darkTheme = createTheme({
   palette: {
-    // NOTE: Mode 'dark' gives default dark theme with change in text color. 
+    // NOTE: Mode 'dark' gives default dark theme with change in text color.
     mode: 'dark',
     primary: {
       main: '#9e9e9e',

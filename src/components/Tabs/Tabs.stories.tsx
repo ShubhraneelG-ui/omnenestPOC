@@ -22,7 +22,11 @@ const TabsWithContent = () => {
 
   return (
     <>
-      <Tabs onChange={(_, value) => setActiveValue(value)} selectedValue={activeValue} tabsContent={tabsContent} />
+      <Tabs
+        onChange={(_, value) => setActiveValue(value)}
+        selectedValue={activeValue}
+        tabsContent={tabsContent}
+      />
       Active Content {activeValue}
     </>
   );

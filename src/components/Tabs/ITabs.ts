@@ -4,7 +4,7 @@ export interface ITabsContent {
   value: string | number | any;
   content: React.ReactNode;
   tabProps?: TabProps;
-  isPermitted?: boolean
+  isPermitted?: boolean;
 }
 
 export interface ITabs extends TabsProps {

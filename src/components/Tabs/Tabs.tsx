@@ -9,7 +9,15 @@ const Tabs: React.FC<ITabs> = ({ selectedValue, tabsContent, ...tabsProp }) => {
       {tabsContent &&
         tabsContent.map((tabContent: ITabsContent, index: number) => {
           const { content, value, tabProps } = tabContent;
-          return <Tab key={index} tabIndex={index} label={content} value={value} {...tabProps} />;
+          return (
+            <Tab
+              key={index}
+              tabIndex={index}
+              label={content}
+              value={value}
+              {...tabProps}
+            />
+          );
         })}
     </MUITabs>
   );
