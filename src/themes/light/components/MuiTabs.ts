@@ -1,14 +1,12 @@
-import { Components } from "@mui/material";
+import { Components } from '@mui/material';
 
 export const MuiTabsComponent: Components = {
   MuiTabs: {
-    defaultProps: {
-
-    },
+    defaultProps: {},
     styleOverrides: {
       root: {
         // backgroundColor: 'red'
-      }
-    }
-  }
-}
+      },
+    },
+  },
+};

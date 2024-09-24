@@ -26,7 +26,7 @@ const AboutUs = () => {
     }),
     [theme.breakpoints.down('lg')]: {
       backgroundColor: red[500],
-    }
+    },
   }));
 
   return (

@@ -52,6 +52,6 @@ export const lightTheme = createTheme({
   },
   components: {
     MuiButton: MuiButtonComponent.MuiButton,
-    MuiTabs: MuiTabsComponent.MuiTabs
+    MuiTabs: MuiTabsComponent.MuiTabs,
   },
 });
