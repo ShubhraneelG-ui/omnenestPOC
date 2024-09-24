@@ -1,5 +1,3 @@
-const Button = () => {
-
-}
+const Button = () => {};
 
 export default Button;
