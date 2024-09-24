@@ -1,0 +1,37 @@
+.searchableDropdown{
+    margin: 24px;
+}
+
+.dropdownList{
+    cursor: pointer;
+}
+
+.inputContainer {
+    position: relative;
+    width: 25%;
+  }
+  
+  .inputBox {
+    width: 100%;
+    padding: 10px;
+    padding-right: 30px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  
+.clearIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 16px;
+    color: #999;
+    
+    &:hover {
+      color: #333;
+    }
+  }
