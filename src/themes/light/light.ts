@@ -2,6 +2,7 @@ import { createTheme } from '@mui/material';
 import { blue } from '@mui/material/colors';
 import { COLOR_PALETTE } from 'constants/colorPalette';
 import { MuiButtonComponent } from './components/MuiButton';
+import { MuiTabsComponent } from './components/MuiTabs';
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -51,5 +52,6 @@ export const lightTheme = createTheme({
   },
   components: {
     MuiButton: MuiButtonComponent.MuiButton,
+    MuiTabs: MuiTabsComponent.MuiTabs
   },
 });

@@ -20,22 +20,22 @@ const tabsContent = [
 
 const AboutUs = () => {
   const Container = styled(Stack)(({ theme }) => ({
-    backgroundColor: theme.palette.color?.['blue'],
+    backgroundColor: theme.palette.primary.main,
     ...theme.applyStyles('dark', {
       backgroundColor: theme.palette.secondary.main,
     }),
     [theme.breakpoints.down('lg')]: {
       backgroundColor: red[500],
-    },
+    }
   }));
 
   return (
     <Container spacing={10}>
       <Button>Mui Button</Button>
       <Box
-        sx={(theme) => ({
-          background: theme.palette.primary.main,
-        })}
+        sx={{
+          bgcolor: 'primary.main',
+        }}
       >
         Mui Box
       </Box>
