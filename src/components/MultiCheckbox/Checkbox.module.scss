@@ -1,0 +1,52 @@
+.checkboxContainer {
+  display: flex;
+}
+
+.checkboxOptions {
+  display: flex;
+  flex-direction: column;
+  margin: 24px;
+  gap: 8px;
+}
+
+.checkboxOptions label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggleButton {
+  display: flex;
+  align-items: center;
+  background-color: gray;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 12px;
+}
+
+.resetAll {
+  background-color: gray;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.arrowUp {
+  transform: rotate(0deg);
+  width: 24px;
+  height: 24px;
+}
+
+.arrowDown {
+  transform: rotate(180deg);
+  width: 24px;
+  height: 24px;
+}
+
+.showDetails {
+  margin-left: 24px;
+}
