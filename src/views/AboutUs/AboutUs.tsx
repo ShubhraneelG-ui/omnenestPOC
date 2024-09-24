@@ -27,6 +27,7 @@ const AboutUs = () => {
       },
     },
   ];
+
   const barData = [
     {
       name: 'Volume',

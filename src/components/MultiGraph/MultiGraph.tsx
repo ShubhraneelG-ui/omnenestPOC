@@ -1,7 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
 import { IMultiGraph } from './IMultiGraph';
 import { debounce } from 'lodash';
+import { getChartsOptions } from './utils';
 
 const MultiGraph: React.FC<IMultiGraph> = ({
   lineData,
@@ -14,75 +15,37 @@ const MultiGraph: React.FC<IMultiGraph> = ({
 }) => {
   const chartRef = useRef<HTMLDivElement>(null);
 
-  const chartOptions = useMemo(() => {
-    return {
-      title: title ? { text: title } : undefined,
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow',
-        },
-      },
-      grid: {
-        right: '10%',
-      },
-      legend: showLegend
-        ? {
-            data: lineData.map((item) => item.name),
-          }
-        : undefined,
-      xAxis: [
-        {
-          type: 'category',
-          data: categories,
-        },
-      ],
-      yAxis: [
-        {
-          type: 'value',
-          name: 'Trade Volume',
-          position: 'left',
-          axisLine: {
-            show: true,
-          },
-          axisLabel: {
-            formatter: '{value} lot',
-          },
-        },
-        {
-          type: 'value',
-          name: 'Price',
-          position: 'right',
-          axisLine: {
-            show: true,
-          },
-          axisLabel: {
-            formatter: '${value}',
-          },
-        },
-      ],
-      series: [
-        ...barData.map((item) => ({
-          name: item.name,
-          type: 'bar',
-          data: item.values,
-          emphasis: { focus: 'series' },
-          barGap,
-          itemStyle: item.color ? { color: item.color } : undefined,
-        })),
-        ...lineData.map((item) => ({
-          name: item.name,
-          type: 'line',
-          data: item.values,
-          yAxisIndex: 1,
-          lineStyle: item.lineStyle
-            ? item.lineStyle
-            : { color: item.color, type: 'solid' },
-          itemStyle: item.color ? { color: item.color } : undefined,
-        })),
-      ],
+  useEffect(() => {
+    if (!chartRef.current) return;
+
+    let chart = echarts.init(chartRef.current);
+
+    const chartOptions = getChartsOptions({
+      lineData,
+      barData,
+      categories,
+      title,
+      labelOption,
+      showLegend,
+      barGap,
+    });
+    chart.setOption(chartOptions);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      chart?.dispose();
     };
-  }, [lineData, barData, categories, title, labelOption, showLegend, barGap]);
+  }, [
+    chartRef,
+    lineData,
+    barData,
+    categories,
+    title,
+    labelOption,
+    showLegend,
+    barGap,
+  ]);
 
   const handleResize = useCallback(
     debounce(() => {
@@ -94,20 +57,6 @@ const MultiGraph: React.FC<IMultiGraph> = ({
     [],
   );
 
-  useEffect(() => {
-    if (!chartRef.current) return;
-
-    let chart = echarts.init(chartRef.current);
-
-    chart.setOption(chartOptions);
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      chart?.dispose();
-    };
-  }, [chartOptions, handleResize]);
-
   return (
     <div
       ref={chartRef}
@@ -117,4 +66,4 @@ const MultiGraph: React.FC<IMultiGraph> = ({
   );
 };
 
-export default MultiGraph;
+export default React.memo(MultiGraph);

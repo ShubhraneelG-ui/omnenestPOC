@@ -27,18 +27,23 @@ export interface LineStyle {
   width: number;
   type: 'dotted' | 'dashed' | 'solid'; // Strict union type
 }
+
+export interface ILineData {
+  name: string;
+  values: number[];
+  color?: string;
+  lineStyle?: LineStyle;
+}
+
+export interface IBarData {
+  name: string;
+  values: number[];
+  color?: string;
+}
+
 export interface IMultiGraph {
-  lineData: {
-    name: string;
-    values: number[];
-    color?: string;
-    lineStyle?: LineStyle;
-  }[];
-  barData: {
-    name: string;
-    values: number[];
-    color?: string;
-  }[];
+  lineData: ILineData[];
+  barData: IBarData[];
   categories: string[];
   title?: string | undefined;
   labelOption?: GraphLabelOption;
