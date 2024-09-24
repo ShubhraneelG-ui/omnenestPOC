@@ -1,9 +1,10 @@
+import { IMultiGraph } from 'components/MultiGraph/IMultiGraph';
 import MultiGraph from 'components/MultiGraph/MultiGraph';
 
 const AboutUs = () => {
   // For multiGraph
 
-  const lineData = [
+  const lineData: IMultiGraph['lineData'] = [
     {
       name: 'VWAP',
       values: [63, 62.95, 64.5, 64.65, 64.55, 65.3, 67, 68, 68.85, 69, 67.95],
