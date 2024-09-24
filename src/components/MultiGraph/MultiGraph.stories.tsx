@@ -1,8 +1,5 @@
-// MultiGraph.stories.tsx
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import MultiGraph from './MultiGraph';
-import { IMultiGraph } from './IMultiGraph';
 
 // Meta for the story
 const meta: Meta<typeof MultiGraph> = {

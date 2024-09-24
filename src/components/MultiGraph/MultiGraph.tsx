@@ -14,7 +14,7 @@ const MultiGraph: React.FC<IMultiGraph> = ({
 }) => {
   const chartRef = useRef<HTMLDivElement>(null);
 
-  const chartOptions: echarts.EChartsOption = useMemo(() => {
+  const chartOptions = useMemo(() => {
     return {
       title: title ? { text: title } : undefined,
       tooltip: {
