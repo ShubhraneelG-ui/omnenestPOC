@@ -5,9 +5,17 @@ const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
   argTypes: {
-    variant: {
-      control: false,
+    children: {
+      control: "text"
     },
+    color: {
+      control: "select",
+      options: ['primary', 'secondary', 'tertiary']
+    },
+    size: {
+      control: "select",
+      options: ["small", 'medium', 'large']
+    }
   },
 };
 
@@ -15,32 +23,21 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+export const Color: Story = {
   args: {
-    variant: 'Primary',
-    size: 'Medium',
+    color: "primary",
+    size: 'medium',
     disabled: false,
     children: 'Primary Button',
-    className: 'user-defined-css-class',
   },
 };
 
-export const Secondary: Story = {
+export const Loading: Story = {
   args: {
-    variant: 'Secondary',
-    size: 'Medium',
+    color: "secondary",
+    size: 'medium',
     disabled: false,
-    children: 'Secondary Button',
-    className: 'user-defined-css-class',
+    children: 'Primary Button',
   },
 };
 
-export const Tertiary: Story = {
-  args: {
-    variant: 'Tertiary',
-    size: 'Medium',
-    disabled: false,
-    children: 'Tertiary Button',
-    className: 'user-defined-css-class',
-  },
-};
