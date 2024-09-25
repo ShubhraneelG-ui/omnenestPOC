@@ -12,7 +12,7 @@
   padding-left: 29px;
 
   &.primary {
-    @include buttonAppearance($blue, $white);
+    @include buttonAppearance(var(--button-background), $white);
 
     &:disabled {
       @include buttonAppearance($grey-disabled, $text-disabled);

@@ -1,0 +1,9 @@
+@import 'src/styles/constants';
+
+html[data-theme='light'] {
+  --button-background: #{$blue-500};
+}
+
+html[data-theme='dark'] {
+  --button-background: #{$grey};
+}
