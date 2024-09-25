@@ -59,7 +59,6 @@ const AboutUs = () => {
         data={chartData}
         categories={categories}
         title="Vertical Bar Chart without Legend"
-        showLegend={false}
         barGap="10%"
       />
 
@@ -69,7 +68,6 @@ const AboutUs = () => {
         categories={categories}
         title="Full-featured Bar Chart"
         labelOption={customLabelOption}
-        showLegend={true}
         horizontal={false}
         barGap={0}
       />
