@@ -12,6 +12,7 @@ const MultiGraph: React.FC<IMultiGraph> = ({
   labelOption,
   showLegend = true,
   barGap = '0',
+  yAxisOptions,
 }) => {
   const chartRef = useRef<HTMLDivElement>(null);
 
@@ -28,6 +29,7 @@ const MultiGraph: React.FC<IMultiGraph> = ({
       labelOption,
       showLegend,
       barGap,
+      yAxisOptions,
     });
     chart.setOption(chartOptions);
     window.addEventListener('resize', handleResize);
@@ -45,6 +47,7 @@ const MultiGraph: React.FC<IMultiGraph> = ({
     labelOption,
     showLegend,
     barGap,
+    yAxisOptions,
   ]);
 
   const handleResize = useCallback(
@@ -62,8 +65,8 @@ const MultiGraph: React.FC<IMultiGraph> = ({
       ref={chartRef}
       style={{ width: '100%', height: '700px' }}
       aria-label={title || 'Multi-series graph'}
-    ></div>
+    />
   );
 };
 
-export default React.memo(MultiGraph);
+export default MultiGraph;

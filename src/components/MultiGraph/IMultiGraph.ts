@@ -31,6 +31,7 @@ export interface LineStyle {
 export interface ILineData {
   name: string;
   values: number[];
+  yIndex: number;
   color?: string;
   lineStyle?: LineStyle;
 }
@@ -38,7 +39,18 @@ export interface ILineData {
 export interface IBarData {
   name: string;
   values: number[];
+  yIndex: number;
   color?: string;
+}
+export interface YAxisOptions {
+  name?: string;
+  position?: 'left' | 'right';
+  axisLine?: {
+    show: boolean;
+  };
+  axisLabel?: {
+    formatter: string;
+  };
 }
 
 export interface IMultiGraph {
@@ -49,4 +61,5 @@ export interface IMultiGraph {
   labelOption?: GraphLabelOption;
   showLegend?: boolean;
   barGap?: number | string;
+  yAxisOptions?: YAxisOptions[];
 }
