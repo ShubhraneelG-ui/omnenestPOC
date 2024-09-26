@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import MultiGraph from './MultiGraph';
+import { IMultiGraph } from './IMultiGraph';
 
 // Meta for the story
 const meta: Meta<typeof MultiGraph> = {
@@ -17,7 +18,7 @@ const meta: Meta<typeof MultiGraph> = {
 };
 export default meta;
 
-const baseArgs = {
+const baseArgs: IMultiGraph = {
   lineData: [
     {
       name: 'Line A',
@@ -65,7 +66,7 @@ const baseArgs = {
     },
   ],
 };
-const lineArgs = {
+const lineArgs: IMultiGraph = {
   lineData: [
     {
       name: 'Line A',
